@@ -172,6 +172,7 @@ def run_length_multiproc(
             normalizer += rl.prob
 
         # prune
+        print_log("All runlength:", [(rl.r, rl.prob) for rl in run_lens])
         run_lens, normalizer = prune(run_lens, normalizer, res_num=prune_k)
         print_log("Selected run length after pruning in order:", [rl.r for rl in run_lens])
 
